@@ -32,7 +32,7 @@ public class BookController {
         return bookRepository.save(book);
     }
 
-    @PutMapping(path = "/{id}/update")
+    @PutMapping(path = "/{id}")
     public ResponseEntity<Book> updateBook(@PathVariable(name = "id") long id, @RequestBody BookDto bookDto) {
         Optional<Book> optionalBook = bookRepository.findById(id);
         if (optionalBook.isPresent()) {
