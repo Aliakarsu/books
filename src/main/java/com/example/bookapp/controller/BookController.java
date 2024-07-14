@@ -37,7 +37,7 @@ public class BookController {
         Optional<Book> optionalBook = bookRepository.findById(id);
         if (optionalBook.isPresent()) {
             System.out.println(optionalBook);
-            return null;
+            return ResponseEntity.ok(optionalBook.get());
         }
         else {
             return ResponseEntity.notFound().build();
